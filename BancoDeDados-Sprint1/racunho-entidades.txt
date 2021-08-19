@@ -1,31 +1,53 @@
 especialidade
-	idEspecialidade
+	PK idEspecialidade
 	nomeEspecialidade
 
 clinica
-	idClinica
+	PK idClinica
 	nomeClinica
 	horarioAbertura
 	horarioFechamento
 	cnpj
 	razaoSocial
 	enderecoClinica
-	
-administrador
-	idAdm
-	emailSenha
-	senhaAdm
 
-medico
-	idMedico
-	crm
-	nomeMedico
-	emailMedico
-	especialidade
-	clinicaMedico
-	emailMedico
-	senhaMedico
+tipoUsuario
+	PK idTipoUsuario
+	nomeTipoUsuario	
 
 usuario
-	idUsuario
+	PK idUsuario
+	FK idTipoUsuario
+	nome
+	email	
+	senha
+	
+medico
+	PK idMedico
+	FK idUsuario
+	FK idClinica
+	FK idEspecialidade
+	crm
+		
+paciente
+	PK idPaciente
+	FK idUsuario
+	dataNascimento
+	telefone
+	rg
+	cpf
+	enderecoPaciente
 
+situação
+	PK idSituacao
+	nomeSituacao
+
+consulta
+	PK idConsulta
+	FK idPaciente
+	FK idMedico
+	FK idSituacao
+	dataConsulta
+	descricaoConsulta
+
+	
