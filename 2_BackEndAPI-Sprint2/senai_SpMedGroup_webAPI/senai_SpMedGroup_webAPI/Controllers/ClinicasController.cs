@@ -24,7 +24,7 @@ namespace senai_SpMedGroup_webAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "ADM")]
+        [Authorize(Roles = "3")]
         public IActionResult Cadastrar(Clinica novaClinica)
         {
             try
