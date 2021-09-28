@@ -15,10 +15,10 @@ namespace senai_SpMedGroup_webAPI.Controllers
     [Route("api/[controller]")]
 
     [ApiController]
-    public class ClinicaController : Controller
+    public class ClinicasController : Controller
     {
         private IClinicaRepository _clinicaRepository;
-        public ClinicaController()
+        public ClinicasController()
         {
             _clinicaRepository = new ClinicaRepository();
         }

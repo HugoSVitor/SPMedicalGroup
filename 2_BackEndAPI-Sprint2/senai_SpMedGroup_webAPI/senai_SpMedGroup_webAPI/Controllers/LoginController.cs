@@ -31,15 +31,14 @@ namespace senai_SpMedGroup_webAPI.Controllers
             Usuario UsuarioBuscado = _usuarioRepository.Login(Login.Email, Login.Senha);
             try
             {
-
                 if (UsuarioBuscado != null)
                 {
                     var Claims = new[]
                     {
                     new Claim(JwtRegisteredClaimNames.Email, UsuarioBuscado.Email),
-                    new Claim(ClaimTypes.Role,                            UsuarioBuscado.IdTipoUsuarioNavigation.NomeTipoUsuario),
-                    new Claim(JwtRegisteredClaimNames.NameId, UsuarioBuscado.IdUsuario.ToString())
-                };
+                    new Claim(ClaimTypes.Role,UsuarioBuscado.IdTipoUsuario.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti, UsuarioBuscado.IdUsuario.ToString())
+                    };
 
                     var Chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmedgroup-chave-autenticacao"));
                     var Credenciais = new SigningCredentials(Chave, SecurityAlgorithms.HmacSha256);
@@ -48,7 +47,7 @@ namespace senai_SpMedGroup_webAPI.Controllers
                             issuer: "SpMedGroup.webAPI",
                             audience: "SpMedGroup.webAPI",
                             claims: Claims,
-                            expires: DateTime.Now.AddHours(1.5),
+                            expires: DateTime.Now.AddMinutes(30),
                             signingCredentials: Credenciais
                         );
                     return Ok(new JwtSecurityTokenHandler().WriteToken(Token));

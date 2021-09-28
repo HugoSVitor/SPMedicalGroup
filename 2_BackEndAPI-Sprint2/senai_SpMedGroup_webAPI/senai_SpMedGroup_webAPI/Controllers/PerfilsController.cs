@@ -12,7 +12,8 @@ namespace senai_SpMedGroup_webAPI.Controllers
     [Route("api/[controller]")]
 
     [ApiController]
-    public class PerfilController : ControllerBase
+    public class PerfilsController : ControllerBase
     {
+
     }
 }

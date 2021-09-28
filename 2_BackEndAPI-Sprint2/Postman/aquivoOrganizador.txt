@@ -1,0 +1,26 @@
+Teste de authorize 	(paciente = 1)
+			(medico = 2)
+			(ADM = 3)
+
+métodos paciente
+{
+	listar consultas paciente
+}
+
+métodos medico
+{
+	listar consultas medico
+	modificar descrição
+}
+
+métodos ADM
+{
+	cadastrar usuario
+	listar todos usuarios
+	listar todos medicos
+	listar todos pacientes
+	cancelar consulta
+	deletar consulta
+	agendar consulta	
+	cadastrar clinica
+}

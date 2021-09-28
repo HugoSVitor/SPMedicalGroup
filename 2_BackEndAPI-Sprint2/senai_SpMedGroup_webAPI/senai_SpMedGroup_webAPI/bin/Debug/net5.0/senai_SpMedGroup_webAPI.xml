@@ -4,5 +4,30 @@
         <name>senai_SpMedGroup_webAPI</name>
     </assembly>
     <members>
+        <member name="F:senai_SpMedGroup_webAPI.Repositories.ClinicaRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:senai_SpMedGroup_webAPI.Repositories.ConsultaRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:senai_SpMedGroup_webAPI.Repositories.MedicoRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:senai_SpMedGroup_webAPI.Repositories.PacienteRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:senai_SpMedGroup_webAPI.Repositories.UsuarioRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
     </members>
 </doc>

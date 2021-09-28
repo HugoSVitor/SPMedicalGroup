@@ -45,23 +45,27 @@ namespace senai_SpMedGroup_webAPI.Repositories
             return ctx.Consulta.Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).Include(c => c.IdSituacaoNavigation).FirstOrDefault(c => c.IdConsulta == idConsulta);
         }
 
-        public List<Consultum> ListarConsultasMedico(int idMedico)
+        public List<Consultum> ListarConsultasMedico(int idUsuario)
         {
+            Medico m = ctx.Medicos.FirstOrDefault(m => m.IdUsuario == idUsuario);
+            
             return ctx.Consulta
                 .Include(c => c.IdMedicoNavigation)
                 .Include(c => c.IdPacienteNavigation)
                 .Include(c => c.IdSituacaoNavigation)
-                .Where(c => c.IdMedico == idMedico)
+                .Where(c => c.IdMedico == m.IdMedico)
                 .ToList();
         }
 
-        public List<Consultum> ListarConsultasPaciente(int idPaciente)
+        public List<Consultum> ListarConsultasPaciente(int idUsuario)
         {
+            Paciente p = ctx.Pacientes.FirstOrDefault(p => p.IdUsuario == idUsuario);
+                                        
             return ctx.Consulta
                 .Include(c => c.IdMedicoNavigation)
                 .Include(c => c.IdPacienteNavigation)
                 .Include(c => c.IdSituacaoNavigation)
-                .Where(c => c.IdPaciente == idPaciente)
+                .Where(c => c.IdPaciente == p.IdPaciente)
                 .ToList();
         }
 
