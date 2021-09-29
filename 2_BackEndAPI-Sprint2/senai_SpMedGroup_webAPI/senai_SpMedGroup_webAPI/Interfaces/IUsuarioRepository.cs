@@ -1,4 +1,5 @@
-﻿using senai_SpMedGroup_webAPI.Domains;
+﻿using Microsoft.AspNetCore.Http;
+using senai_SpMedGroup_webAPI.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,11 @@ namespace senai_SpMedGroup_webAPI.Interfaces
         void Cadastrar(Usuario novoUsuario);
         List<Usuario> ListarTodos();
         public Usuario Login(string email, string senha);
+
+        public string ConsultarPerfilBD(int idUsuario);
+
+        public void SalvarPerfilBD(IFormFile foto, int id_usuario);
+
+
     }
 }

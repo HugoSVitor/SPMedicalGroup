@@ -507,6 +507,42 @@
 			]
 		},
 		{
+			"name": "Perfil/Imagens",
+			"item": [
+				{
+					"name": "Consultar imagem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Enviar imagem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/perfils/imagem/bd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"perfils",
+								"imagem",
+								"bd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Login (Paciente)",
 			"request": {
 				"method": "POST",

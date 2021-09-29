@@ -21,6 +21,7 @@ namespace senai_SpMedGroup_webAPI.Context
         public virtual DbSet<Clinica> Clinicas { get; set; }
         public virtual DbSet<Consultum> Consulta { get; set; }
         public virtual DbSet<Especialidade> Especialidades { get; set; }
+        public virtual DbSet<ImagemUsuario> ImagemUsuarios { get; set; }
         public virtual DbSet<Medico> Medicos { get; set; }
         public virtual DbSet<Paciente> Pacientes { get; set; }
         public virtual DbSet<Situacao> Situacaos { get; set; }
@@ -32,7 +33,6 @@ namespace senai_SpMedGroup_webAPI.Context
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-
                 optionsBuilder.UseSqlServer("Data Source=NOTE0113E1\\SQLEXPRESS; Initial Catalog=SpMedicalGroup_T; user id=sa; pwd=Senai@132;");
             }
         }
@@ -144,6 +144,48 @@ namespace senai_SpMedGroup_webAPI.Context
                     .HasMaxLength(30)
                     .IsUnicode(false)
                     .HasColumnName("nomeEspecialidade");
+            });
+
+            modelBuilder.Entity<ImagemUsuario>(entity =>
+            {
+                entity.HasKey(e => e.IdImagem)
+                    .HasName("PK__imagemUs__EA9A7137B7132E36");
+
+                entity.ToTable("imagemUsuario");
+
+                entity.HasIndex(e => e.IdUsuario, "UQ__imagemUs__645723A72012419B")
+                    .IsUnique();
+
+                entity.Property(e => e.IdImagem).HasColumnName("idImagem");
+
+                entity.Property(e => e.Binario)
+                    .IsRequired()
+                    .HasColumnName("binario");
+
+                entity.Property(e => e.DataInclusao)
+                    .HasColumnType("datetime")
+                    .HasColumnName("dataInclusao")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
+
+                entity.Property(e => e.MimeType)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("mimeType");
+
+                entity.Property(e => e.NomeArquivo)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("nomeArquivo");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithOne(p => p.ImagemUsuario)
+                    .HasForeignKey<ImagemUsuario>(d => d.IdUsuario)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__imagemUsu__idUsu__5DCAEF64");
             });
 
             modelBuilder.Entity<Medico>(entity =>

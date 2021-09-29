@@ -79,3 +79,14 @@ CREATE TABLE consulta
 	descricaoConsulta VARCHAR(100) NOT NULL
 )
 GO
+
+CREATE TABLE imagemUsuario
+(
+	idImagem INT PRIMARY KEY IDENTITY (1,1),
+	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario) UNIQUE NOT NULL,
+	binario VARBINARY(MAX) NOT NULL,
+	mimeType VARCHAR(250) NOT NULL,
+	nomeArquivo VARCHAR(250) NOT NULL,
+	dataInclusao DATETIME DEFAULT GETDATE() NULL
+);
+GO
