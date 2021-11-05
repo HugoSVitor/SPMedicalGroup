@@ -1,0 +1,28 @@
+/*Header*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header_container {
+    height: 80px;
+    width: 100vw;
+}
+
+.menu_hamburger {
+    background-color: black;
+    
+}
+
+
+
+/*Main*/
+.banner {
+    height: 566px;
+    width: auto;
+    background-color: black;
+    width: 100vw;
+}
+
+/*Footer*/
