@@ -1,3 +1,5 @@
+
+
 /*Header*/
 * {
   margin: 0;
@@ -8,21 +10,137 @@
 .header_container {
     height: 80px;
     width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw;
+
 }
 
 .menu_hamburger {
     background-color: black;
+    width: 3vw;
+    height: 3vw;
     
 }
 
+.navUsuario {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+}
 
+.logoHeader {
+    height: 90%;
+}
+
+.imagemUsuario {
+    height: 3vw;
+    width: 3vw;
+    background-color: violet;
+    border-radius: 50%;
+    margin-left: 1vw;
+}
 
 /*Main*/
 .banner {
     height: 566px;
     width: auto;
-    background-color: black;
+    background-image: url(../imagens/Rectangle5.png);
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quadradoBanner{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quadradoBanner hr{
+    width: 100%;
+    margin-top: 2px ;
+    margin-bottom: 20px;
+}
+
+.quadradoBanner span{
+    font-size: 2vw;
+    color: white;
+    font-family: 'Palanquin', sans-serif;
+}
+
+.quadradoBanner h1{
+    height: auto;
+    font-size: 5vw;
+    color: white;
+    font-family: 'Palanquin', sans-serif;
+}
+
+.botaoPadrao {
+    width: 20vw;
+    background: linear-gradient(180deg, rgba(131, 190, 223, 0.35) 0%, rgba(129, 223, 153, 0.35) 100%);
+    border-radius: 20px;
+    height: 7vw;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.consultas-section {
+    display: flex;
+    padding: 0 10vw;
+    justify-content: space-around;
+    align-items: center;
+    height: 250px;
 }
 
 /*Footer*/
+
+footer{
+    height: 300px;
+    border: black;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10vw;
+    background-color: blanchedalmond;
+    
+}
+
+.imgEmail{
+    width: 2vw;
+    height: 2vw;
+}
+
+.imgPhone {
+    width: 2vw;
+    height: 2vw;
+}
+
+.logoFooter {
+    width: 3vw;
+    height: 4vw;
+}
+
+.redesSociais {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+}
+
+.redesSociais img{
+    width: 8vw;
+    height: 3vw;
+}
