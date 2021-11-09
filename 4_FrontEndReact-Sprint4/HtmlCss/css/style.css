@@ -17,6 +17,15 @@
 
 }
 
+.header_container-login {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10vw;
+}
+
 .menu_hamburger {
     background-color: black;
     width: 3vw;
@@ -44,6 +53,8 @@
 }
 
 /*Main*/
+
+/*Home*/
 .banner {
     height: 566px;
     width: auto;
@@ -84,7 +95,7 @@
 .botaoPadrao {
     width: 20vw;
     background: linear-gradient(180deg, rgba(131, 190, 223, 0.35) 0%, rgba(129, 223, 153, 0.35) 100%);
-    border-radius: 20px;
+    border-radius: 15px;
     height: 7vw;
     font-size: 20px;
     display: flex;
@@ -103,28 +114,98 @@
     height: 250px;
 }
 
+.form-login h2 {
+    font-family: 'Palanquin', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/*Login*/
+
+.login-Fundo {
+    background-image: url(../imagens/Rectangle5.png);
+    height: 44vw;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-login {
+    background-color: white;
+    border-radius: 20px;
+    height: 30vw;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 50px
+}
+
+.login-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-inputs input{
+    width: 30vw;
+    height: 40px;
+    padding-left: 5px;
+    margin-top: 50px;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    border-color: rgb(221, 220, 220);
+}
+
+.botaoLogar {
+    width: 10vw;
+    height: 3vw;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.form-login h2{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
 /*Footer*/
 
 footer{
     height: 300px;
-    border: black;
-    border-width: 1px;
+    border-top: 5px;
+    border-width: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10vw;
-    background-color: blanchedalmond;
-    
+}
+
+.emailFooter {
+    display: flex;
+    align-items: center;
 }
 
 .imgEmail{
     width: 2vw;
     height: 2vw;
+    margin-right: 5px;
+}
+
+.phoneFooter {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 5px;
 }
 
 .imgPhone {
     width: 2vw;
     height: 2vw;
+    margin-right: 5px;
 }
 
 .logoFooter {
@@ -143,4 +224,10 @@ footer{
 .redesSociais img{
     width: 8vw;
     height: 3vw;
+}
+
+footer span {
+    font-size: 1vw;
+    color: black;
+    font-family: 'Palanquin', sans-serif;
 }
