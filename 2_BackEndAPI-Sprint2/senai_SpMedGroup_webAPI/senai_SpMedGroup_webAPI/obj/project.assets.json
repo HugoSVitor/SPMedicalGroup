@@ -7534,19 +7534,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DEV\\.nuget\\packages\\": {}
+    "C:\\Users\\53961345856\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DEV\\Desktop\\SPMedicalGroup\\2_BackEndAPI-Sprint2\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\53961345856\\Desktop\\SPMedicalGroup\\2_BackEndAPI-Sprint2\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI.csproj",
       "projectName": "senai_SpMedGroup_webAPI",
-      "projectPath": "C:\\Users\\DEV\\Desktop\\SPMedicalGroup\\2_BackEndAPI-Sprint2\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI.csproj",
-      "packagesPath": "C:\\Users\\DEV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DEV\\Desktop\\SPMedicalGroup\\2_BackEndAPI-Sprint2\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI\\obj\\",
+      "projectPath": "C:\\Users\\53961345856\\Desktop\\SPMedicalGroup\\2_BackEndAPI-Sprint2\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI.csproj",
+      "packagesPath": "C:\\Users\\53961345856\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\53961345856\\Desktop\\SPMedicalGroup\\2_BackEndAPI-Sprint2\\senai_SpMedGroup_webAPI\\senai_SpMedGroup_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DEV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\53961345856\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7621,7 +7621,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

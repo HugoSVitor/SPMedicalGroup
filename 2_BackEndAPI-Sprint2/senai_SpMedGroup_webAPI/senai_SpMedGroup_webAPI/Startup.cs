@@ -34,6 +34,17 @@ namespace senai_SpMedGroup_webAPI
                 c.IncludeXmlComments(xmlPath);
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("http://localhost:3000")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
+
             services
                 .AddAuthentication(options =>
                 {
@@ -76,6 +87,8 @@ namespace senai_SpMedGroup_webAPI
             });
 
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
 
