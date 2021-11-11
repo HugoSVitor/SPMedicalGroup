@@ -37,7 +37,8 @@ namespace senai_SpMedGroup_webAPI.Controllers
                     {
                     new Claim(JwtRegisteredClaimNames.Email, UsuarioBuscado.Email),
                     new Claim(ClaimTypes.Role,UsuarioBuscado.IdTipoUsuario.ToString()),
-                    new Claim(JwtRegisteredClaimNames.Jti, UsuarioBuscado.IdUsuario.ToString())
+                    new Claim(JwtRegisteredClaimNames.Jti, UsuarioBuscado.IdUsuario.ToString()),
+                    new Claim( "role", UsuarioBuscado.IdTipoUsuario.ToString() )
                     };
 
                     var Chave = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmedgroup-chave-autenticacao"));
@@ -50,7 +51,10 @@ namespace senai_SpMedGroup_webAPI.Controllers
                             expires: DateTime.Now.AddMinutes(30),
                             signingCredentials: Credenciais
                         );
-                    return Ok(new JwtSecurityTokenHandler().WriteToken(Token));
+                    return Ok(new
+                    {
+                        token = new JwtSecurityTokenHandler().WriteToken(Token)
+                    });
                 }
                 else
                 {

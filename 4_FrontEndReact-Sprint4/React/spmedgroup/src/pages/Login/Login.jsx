@@ -1,20 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios"
-import { parseJwt, usuarioAutenticado } from '../../services/Auth';
+import { parseJwt,usuarioAutenticado } from "../../services/Auth.jsx";
 import { Link, useHistory } from 'react-router-dom';
 import "../../assets/css/style.css"
+import Footer from "../../components/footer/footer.js"
+import logo from '../../assets/imagens/image1.png'
 
 export default function Login() 
 {
-    const [ email, setEmail ] = useState('')
-    const [ senha, setSenha ] = useState('')
+    const [ email, setEmail ] = useState( 'roberto.possarle@spmedicalgroup.com.br' )
+    const [ senha, setSenha ] = useState('rob123')
     const [ erroMensagem, setErroMensagem ] = useState('')
     const [ isLoading, setIsLoading ] = useState(false)
     let history = useHistory();
 
     function efetuaLogin(event)
     {
-        event.PeventDefault();
+        event.preventDefault();
 
         setErroMensagem('')
         setIsLoading(true)
@@ -27,15 +29,17 @@ export default function Login()
         {
             if (resposta.status === 200) 
             {
-                localStorage.setItem('usuario-login', resposta.data.token);
+                console.log(resposta);
+                localStorage.setItem('usuario-login', resposta.data);
 
                 setIsLoading(false);
 
                 let base64 = localStorage.getItem('usuario-login').split('.')[1];
 
                 console.log(base64);
-
-                //2 = médico, 1 = paciente, adm = 3
+                console.log(parseJwt());
+                console.log(parseJwt().role);
+                //1 = paciente, 2 = médico, adm = 3
                 switch (parseJwt().role) {
                     case '1':
                         history.push("/minhasConsultas")
@@ -62,7 +66,7 @@ export default function Login()
 
     return (
         <div>
-            <header><div className="header_container-login"><img  className="logoHeader" src="../../assets/imagens/image1" alt="Logo SpMedGroup" /></div></header>
+            <header><div className="header_container-login"><Link to="/"/><img  className="logoHeader" src={logo} alt="Logo SpMedGroup" /></div></header>
             <div className="login-Fundo">
                 <div className="form-login">
                     <form onSubmit={efetuaLogin}>
@@ -71,11 +75,17 @@ export default function Login()
                             <div className="login-inputs">
                                 <input type="text" placeholder="Email" value={email} onChange={(campo) => setEmail(campo.target.value)}/>
                                 <input type="password" placeholder="Senha" value={senha} onChange={(campo) => setSenha(campo.target.value)}/>
+                                <p>{erroMensagem}</p>
                             </div>
+                            
 
                             {
                                 isLoading === false &&
-                                <button type="submit" className="botaoPadrao botaoLogar">Logar</button>
+                                <button type="submit" disabled={
+                                    email === '' || senha === ''
+                                      ? 'none'
+                                      : ''
+                                  } className="botaoPadrao botaoLogar">Logar</button>
                             }
 
                             {
@@ -88,6 +98,7 @@ export default function Login()
                     </form>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

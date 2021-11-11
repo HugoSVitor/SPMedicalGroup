@@ -50,7 +50,8 @@ namespace senai_SpMedGroup_webAPI.Repositories
             Medico m = ctx.Medicos.FirstOrDefault(m => m.IdUsuario == idUsuario);
             
             return ctx.Consulta
-                .Include(c => c.IdMedicoNavigation)
+                .Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation)
+                .Include(c => c.IdMedicoNavigation.IdClinicaNavigation)
                 .Include(c => c.IdPacienteNavigation)
                 .Include(c => c.IdSituacaoNavigation)
                 .Where(c => c.IdMedico == m.IdMedico)
@@ -62,7 +63,8 @@ namespace senai_SpMedGroup_webAPI.Repositories
             Paciente p = ctx.Pacientes.FirstOrDefault(p => p.IdUsuario == idUsuario);
                                         
             return ctx.Consulta
-                .Include(c => c.IdMedicoNavigation)
+                .Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation)
+                .Include(c => c.IdMedicoNavigation.IdClinicaNavigation)
                 .Include(c => c.IdPacienteNavigation)
                 .Include(c => c.IdSituacaoNavigation)
                 .Where(c => c.IdPaciente == p.IdPaciente)
@@ -72,7 +74,8 @@ namespace senai_SpMedGroup_webAPI.Repositories
         public List<Consultum> ListarTodas()
         {
             return ctx.Consulta
-                .Include(c => c.IdMedicoNavigation)
+                .Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation)
+                .Include(c => c.IdMedicoNavigation.IdClinicaNavigation)
                 .Include(c => c.IdPacienteNavigation)
                 .Include(c => c.IdSituacaoNavigation)
                 .ToList(); 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+//import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Redirect, Switch} from 'react-router-dom';
 import { parseJwt, usuarioAutenticado } from './services/Auth';
