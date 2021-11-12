@@ -30,7 +30,7 @@ export default function Login()
             if (resposta.status === 200) 
             {
                 console.log(resposta);
-                localStorage.setItem('usuario-login', resposta.data);
+                localStorage.setItem('usuario-login', resposta.data.token);
 
                 setIsLoading(false);
 
@@ -51,6 +51,7 @@ export default function Login()
                         break;
                     case '3':
                         history.push("/consultasAdm")
+                        console.log('estou logado: ' + usuarioAutenticado());
                         break;
                 
                     default:

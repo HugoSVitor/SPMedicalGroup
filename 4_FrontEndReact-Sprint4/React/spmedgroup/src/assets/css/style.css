@@ -210,6 +210,29 @@ th,td {
     border-radius: 15px;
 }
 
+/*Medicos consultas*/
+
+.botaoConsultasMed {
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    padding: 8px 8px;
+    cursor: pointer;
+}
+
+.formConsultasMed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formConsultasMed input{
+    width: 15vw;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+}
+
 /*Footer*/
 
 footer{

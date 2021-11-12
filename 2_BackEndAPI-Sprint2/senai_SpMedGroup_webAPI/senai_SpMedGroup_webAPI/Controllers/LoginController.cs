@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using senai_SpMedGroup_webAPI.Domains;
 using senai_SpMedGroup_webAPI.Interfaces;
 using senai_SpMedGroup_webAPI.Repositories;
+using senai_SpMedGroup_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -26,7 +27,7 @@ namespace senai_SpMedGroup_webAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Logar(Usuario Login)
+        public IActionResult Logar(LoginViewModel Login)
         {
             Usuario UsuarioBuscado = _usuarioRepository.Login(Login.Email, Login.Senha);
             try
