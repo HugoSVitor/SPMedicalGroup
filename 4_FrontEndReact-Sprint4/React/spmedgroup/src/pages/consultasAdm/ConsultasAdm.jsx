@@ -187,7 +187,7 @@ export default function ConsultasAdm()
 
                             <input required name="situacao" type="text" placeholder='situação (1=Realizada, 2=Agendada, 3=Cancelada)' onChange={(campo) => setSituacao(campo.target.value)} value={situacao}/>
 
-                            <input type="date" name="dataConsulta" value={dataConsulta} onChange={(campo) => setDataConsulta(campo.target.value)} />
+                            <input type="datetime-local" name="dataConsulta" value={dataConsulta} onChange={(campo) => setDataConsulta(campo.target.value)} />
 
                             </div>
 
