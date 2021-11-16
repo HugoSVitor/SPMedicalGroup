@@ -8,8 +8,8 @@ import logo from '../../assets/imagens/image1.png'
 
 export default function Login() 
 {
-    const [ email, setEmail ] = useState( 'roberto.possarle@spmedicalgroup.com.br' )
-    const [ senha, setSenha ] = useState('rob123')
+    const [ email, setEmail ] = useState( 'adm@gmail.com' )
+    const [ senha, setSenha ] = useState('adm123')
     const [ erroMensagem, setErroMensagem ] = useState('')
     const [ isLoading, setIsLoading ] = useState(false)
     let history = useHistory();

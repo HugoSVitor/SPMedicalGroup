@@ -233,6 +233,37 @@ th,td {
     margin-bottom: 1vw;
 }
 
+/*Adm consultas*/
+.formConsultasAdm{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.formConsultasAdm input{
+    margin-top: 1vw;
+    margin-left: 1vw;
+    width: 15vw;
+    height: 2vw;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.formConsultasAdm select{
+    margin-top: 1vw;
+    margin-left: 1vw;
+    width: 15vw;
+    height: 2vw;
+    border-radius: 5px;
+    margin-top: 3vw;
+}
+
+.botaoConAdm{
+    height: 3vw;
+    width: 10vw;
+    margin-top: 3vw;
+}
+
 /*Footer*/
 
 footer{
