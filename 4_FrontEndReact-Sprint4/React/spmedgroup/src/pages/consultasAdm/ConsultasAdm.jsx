@@ -118,7 +118,7 @@ export default function ConsultasAdm()
                                     <th>Situação</th>
                                     <th>Nome Médico</th>
                                     <th>Nome Paciente</th>
-                                    <th>Especialidade(Médico)</th>
+                                    <th>Especialidade (Médico)</th>
                                     <th>Endereço</th>
                                 </tr>
                                 
