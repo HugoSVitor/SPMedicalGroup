@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Redirect, Switch} from 'react-router-dom';
 import { parseJwt, usuarioAutenticado } from './services/Auth';
 
+import Home from './pages/home/home'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import NotFound from './pages/notFound/NotFound';
@@ -54,6 +55,7 @@ const routing = (
   <Router>
     <div>
       <Switch>
+        <Route path="/" component={Home} />
         <Route path="/login" component={Login} />
         <PermissaoPaciente path="/minhasConsultas" component={ConsultasPacientes} />
         <PermissaoMedico path="/consultasMed" component={ConsultasMedicos} />
