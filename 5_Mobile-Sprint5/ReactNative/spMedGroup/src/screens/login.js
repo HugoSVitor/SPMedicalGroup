@@ -23,8 +23,8 @@ export default class Login extends Component
         super(props)
 
         this.state = {
-            email : "joao@hotmail.com",
-            senha : "jao123"
+            email : "alexandre@gmail.com",
+            senha : "ale123"
         }
     } 
 
@@ -42,7 +42,6 @@ export default class Login extends Component
         await AsyncStorage.setItem('userToken',token)
 
         if (resposta.status == 200) {
-            console.warn('if=200')
             if (jwtDecode(token).role == '1')
             {
                 this.props.navigation.navigate('ConsultasPac');
