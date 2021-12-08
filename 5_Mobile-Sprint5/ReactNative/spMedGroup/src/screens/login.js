@@ -14,8 +14,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import api from '../services/api';
 
-import consultasPac from './consultasPaciente'
-
 export default class Login extends Component
 {
     constructor(props)
@@ -23,13 +21,13 @@ export default class Login extends Component
         super(props)
 
         this.state = {
-            email : "alexandre@gmail.com",
-            senha : "ale123"
+            email : "ricardo.lemos@spmedicalgroup.com.br",
+            senha : "ric123"
         }
     } 
 
     realizarLogin = async () => {
-        console.warn(this.state.email + ' ' + this.state.senha)
+        //console.warn(this.state.email + ' ' + this.state.senha)
 
         const resposta = await api.post('/Login',
             {
@@ -50,10 +48,11 @@ export default class Login extends Component
 
             if (jwtDecode(token).role == '2')
             {
+                this.props.navigation.navigate('ConsultasMed');
             }
             
         }
-        console.warn(token)
+        //console.warn(token)
     }
 
     render() {
@@ -131,7 +130,7 @@ const styles = StyleSheet.create(
 
         btnLoginText: {
             fontSize: 25,
-            color: "black"
+            color: "white"
         }
         
 

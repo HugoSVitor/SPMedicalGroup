@@ -26,7 +26,7 @@ export default class ConsultasPac extends Component {
     buscarConsultas = async () => {
 
         const token = await AsyncStorage.getItem('userToken');
-        console.warn(token)
+        //console.warn(token)
 
         const resposta = await api.get('/Consultas/minhas/paciente', {
             headers: {
@@ -40,12 +40,9 @@ export default class ConsultasPac extends Component {
             //const dadosAPI = resposta.data;
             this.setState({ listaConsultas: resposta.data })
 
-            console.warn(this.state.listaConsultas)
+            //console.warn(this.state.listaConsultas)
 
-        } else {
-            console.warn('Não é StatusCode(200)')
         }
-
     }
 
     componentDidMount() { this.buscarConsultas() }
@@ -90,7 +87,10 @@ export default class ConsultasPac extends Component {
             </View>
 
             <View style={styles.flatListSeparacao}>
-                <Text style={styles.flatListFontGrande}>{item.dataConsulta}</Text>
+                <Text style={styles.flatListFontGrande}>{Intl.DateTimeFormat("pt-BR", {
+                            year: 'numeric', month: 'short', day: 'numeric',
+                            hour: 'numeric', minute: 'numeric', hour12: false
+                        }).format(new Date(item.dataConsulta))}</Text>
                 <Text style={styles.flatListFontGrande}>{(item.idSituacaoNavigation.nomeSituacao)}</Text>
             </View>
             <View style={styles.flatListSeparacao}>
@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     },
 
     headerTitulo: {
+        marginTop: 20,
         flexDirection: 'row',
         
     },
