@@ -36,7 +36,7 @@ export default function ConsultasMedicos()
     function alterarDescricao(event) {
         event.preventDefault()
 
-        axios.patch('http://localhost:5000/api/Consultas/descricao/' + idDescricaoAlterada,
+        axios.patch('http://192.168.5.66:5000/api/Consultas/descricao/' + idDescricaoAlterada,
         {
             descricaoConsulta : descricaoAlterada
         }, {headers : {

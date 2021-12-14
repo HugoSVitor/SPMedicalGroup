@@ -26,11 +26,10 @@ namespace senai_SpMedGroup_webAPI.Controllers
 
         [HttpPost]
         [Authorize(Roles = "3")]
-        public IActionResult Cadastrar(Paciente novoPaciente)
+        public IActionResult Cadastrar(Paciente novoPaciente, int idUsuario)
         {
             try
             {
-                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
                 _pacienteRepository.Cadastrar(novoPaciente, idUsuario);
                 return StatusCode(201);
             }

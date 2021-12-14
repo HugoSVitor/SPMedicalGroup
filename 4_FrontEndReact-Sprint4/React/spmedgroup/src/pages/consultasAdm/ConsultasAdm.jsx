@@ -20,7 +20,7 @@ export default function ConsultasAdm()
     
 
     function buscarConsultas() {
-        axios('http://localhost:5000/api/Consultas', {
+        axios('http://192.168.5.66:5000/api/Consultas', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -34,7 +34,7 @@ export default function ConsultasAdm()
     }
 
     function buscarMedicos() {
-        axios('http://localhost:5000/api/Medicos', {
+        axios('http://192.168.5.66:5000/api/Medicos', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -48,7 +48,7 @@ export default function ConsultasAdm()
     }
 
     function buscarPacientes() {
-        axios('http://localhost:5000/api/Pacientes', {
+        axios('http://192.168.5.66:5000/api/Pacientes', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -76,7 +76,7 @@ export default function ConsultasAdm()
 
         }
 
-        axios.post('http://localhost:5000/api/Consultas/agendar', novaConsulta, {
+        axios.post('http://192.168.5.66:5000/api/Consultas/agendar', novaConsulta, {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
               },
