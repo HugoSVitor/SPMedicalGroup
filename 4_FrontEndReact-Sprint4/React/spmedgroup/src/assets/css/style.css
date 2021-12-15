@@ -83,7 +83,7 @@ th,td {
 .banner {
     height: 566px;
     width: auto;
-    background-image: url(../imagens/Rectangle5.png);
+    background-image: url(../imagens/Rectangle86.png);
     width: 100vw;
     display: flex;
     align-items: center;
@@ -148,7 +148,7 @@ th,td {
 /*Login*/
 
 .login-Fundo {
-    background-image: url(../imagens/Rectangle5.png);
+    background-image: url(../imagens/Rectangle86.png);
     height: 44vw;
     display: flex;
     width: 100%;
@@ -199,7 +199,7 @@ th,td {
 
 /*Pacientes consultas*/
 .consultasPac-Fundo{
-    background-image: url(../imagens/Rectangle5.png);
+    background-image: url(../imagens/Rectangle86.png);
     height: auto;
     padding: 5vw;
 }
@@ -269,6 +269,14 @@ th,td {
     width: 10vw;
     margin-top: 3vw;
 }
+
+/*Cadastro de localizações*/
+.tituloCadLocalizacao{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+
 
 /*Footer*/
 

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Redirect, Switch} from 'react-router-dom';
 import { parseJwt, usuarioAutenticado } from './services/Auth';
 
-import Home from './pages/home/home'
+//import Home from './pages/home/home'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import NotFound from './pages/notFound/NotFound';
@@ -11,6 +11,8 @@ import ConsultasPacientes from './pages/consultasPac/ConsultasPac';
 import ConsultasMedicos from './pages/consultasMed/ConsultasMed';
 import ConsultasAdm from './pages/consultasAdm/ConsultasAdm';
 import Login from './pages/Login/Login';
+import LocalizacoesCad from './pages/localizacoes/localizacaoCad';
+//import LocalizacoesMapa from './pages/localizacoes/mapa.html';
 
 //2 = médico, 1 = paciente, adm = 3
 
@@ -55,7 +57,9 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route path="/" component={Home} />
+        {/* <Route path="/" component={Home} /> */}
+        <Route path="/localizacoes/cadastro" component={LocalizacoesCad} />
+        {/* <Route path="/localizacoes/mapa" component={LocalizacoesMapa} /> */}
         <Route path="/login" component={Login} />
         <PermissaoPaciente path="/minhasConsultas" component={ConsultasPacientes} />
         <PermissaoMedico path="/consultasMed" component={ConsultasMedicos} />

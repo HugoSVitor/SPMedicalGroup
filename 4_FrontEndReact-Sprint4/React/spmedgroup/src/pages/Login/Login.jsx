@@ -73,7 +73,7 @@ export default function Login()
                     <form onSubmit={efetuaLogin}>
                         <div className="form-login">
                             <h2>Login</h2>
-                            <div className="login-inputs">
+                            <div  className="login-inputs">
                                 <input type="text" placeholder="Email" value={email} onChange={(campo) => setEmail(campo.target.value)}/>
                                 <input type="password" placeholder="Senha" value={senha} onChange={(campo) => setSenha(campo.target.value)}/>
                                 <p>{erroMensagem}</p>
