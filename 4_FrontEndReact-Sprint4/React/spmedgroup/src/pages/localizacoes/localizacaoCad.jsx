@@ -63,12 +63,13 @@ export default function LocalizacaoCad()
                             isLoading === false &&
                             <button className="botaoPadrao botaoConAdm" type="submit">Cadastrar</button>
                         }
+                        <Link className="linkMapa" to="/localizacoes/mapa">Ver mapa!</Link>
                         </div>
                     </form>     
                     </div>               
                 </div>
                 <div>
-                <Link to="file:///C:/Users/53961345856/Desktop/SPMedicalGroup/4_FrontEndReact-Sprint4/React/spmedgroup/src/pages/localizacoes/mapa.html"/>
+                
                 </div>
             </main>
             <Footer/>

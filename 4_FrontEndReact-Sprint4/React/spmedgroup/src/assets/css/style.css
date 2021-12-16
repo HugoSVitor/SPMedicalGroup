@@ -159,7 +159,7 @@ th,td {
 .form-login {
     background-color: white;
     border-radius: 20px;
-    height: 30vw;
+    height: 32vw;
     width: 50vw;
     display: flex;
     flex-direction: column;
@@ -276,6 +276,11 @@ th,td {
     font-weight: 100;
 }
 
+.linkMapa {
+    margin-top: 15px;
+    text-decoration: none;
+    color: black;
+}
 
 
 /*Footer*/
