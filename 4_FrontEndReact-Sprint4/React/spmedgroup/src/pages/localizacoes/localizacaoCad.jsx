@@ -63,7 +63,7 @@ export default function LocalizacaoCad()
                             isLoading === false &&
                             <button className="botaoPadrao botaoConAdm" type="submit">Cadastrar</button>
                         }
-                        <Link className="linkMapa" to="/localizacoes/mapa">Ver mapa!</Link>
+                        <Link className="linkMapa" to="/mapa">Ver mapa!</Link>
                         </div>
                     </form>     
                     </div>               

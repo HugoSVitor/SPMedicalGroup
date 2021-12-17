@@ -12,7 +12,7 @@ import ConsultasMedicos from './pages/consultasMed/ConsultasMed';
 import ConsultasAdm from './pages/consultasAdm/ConsultasAdm';
 import Login from './pages/Login/Login';
 import LocalizacoesCad from './pages/localizacoes/localizacaoCad';
-import LocalizacoesMapa from './pages/localizacoes/mapa';
+import LocalizacoesMapa from './pages/localizacoes/mapa.jsx';
 
 //2 = médico, 1 = paciente, adm = 3
 
@@ -59,11 +59,11 @@ const routing = (
       <Switch>
         {/* <Route path="/" component={Home} /> */}
         <Route path="/localizacoes/cadastro" component={LocalizacoesCad} />
-        <Route path="/localizacoes/mapa" component={LocalizacoesMapa} />
         <Route path="/login" component={Login} />
         <PermissaoPaciente path="/minhasConsultas" component={ConsultasPacientes} />
         <PermissaoMedico path="/consultasMed" component={ConsultasMedicos} />
         <PermissaoAdm path="/consultasAdm" component={ConsultasAdm} />
+        <Route path="/mapa" component={LocalizacoesMapa}/>
         <Route path="/notFound" component={NotFound}/>
         <Redirect to="/notFound"/>
       </Switch>
