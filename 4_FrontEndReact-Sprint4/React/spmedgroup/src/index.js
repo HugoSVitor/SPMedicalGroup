@@ -59,7 +59,7 @@ const routing = (
       <Switch>
         {/* <Route path="/" component={Home} /> */}
         <Route path="/localizacoes/cadastro" component={LocalizacoesCad} />
-        <Route path="/login" component={Login} />
+        <Route path="/" component={ConsultasAdm} />
         <PermissaoPaciente path="/minhasConsultas" component={ConsultasPacientes} />
         <PermissaoMedico path="/consultasMed" component={ConsultasMedicos} />
         <PermissaoAdm path="/consultasAdm" component={ConsultasAdm} />

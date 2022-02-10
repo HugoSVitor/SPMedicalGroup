@@ -20,7 +20,7 @@ export default function ConsultasAdm()
     
 
     function buscarConsultas() {
-        axios('http://192.168.5.66:5000/api/Consultas', {
+        axios('https://62055232161670001741b8ed.mockapi.io/consulta', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -34,7 +34,7 @@ export default function ConsultasAdm()
     }
 
     function buscarMedicos() {
-        axios('http://192.168.5.66:5000/api/Medicos', {
+        axios('https://62055232161670001741b8ed.mockapi.io/medico', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -48,7 +48,7 @@ export default function ConsultasAdm()
     }
 
     function buscarPacientes() {
-        axios('http://192.168.5.66:5000/api/Pacientes', {
+        axios('https://62055232161670001741b8ed.mockapi.io/paciente', {
             headers : {
                 'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -118,8 +118,8 @@ export default function ConsultasAdm()
                                     <th>Situação</th>
                                     <th>Nome Médico</th>
                                     <th>Nome Paciente</th>
-                                    <th>Especialidade (Médico)</th>
-                                    <th>Endereço</th>
+                                    
+                                    
                                 </tr>
                                 
                             </thead>
@@ -129,15 +129,15 @@ export default function ConsultasAdm()
                                     listaConsultas.map((consulta) => 
                                     {
                                         return(
-                                            <tr key={consulta.idConsulta}>
-                                                <td>{consulta.idConsulta}</td>
+                                            <tr key={consulta.id}>
+                                                <td>{consulta.id}</td>
                                                 <td>{Intl.DateTimeFormat("pt-BR", { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }).format(new Date(consulta.dataConsulta))}</td>
                                                 <td>{consulta.descricaoConsulta}</td>
-                                                <td>{consulta.idSituacaoNavigation.nomeSituacao}</td>
-                                                <td>{consulta.idMedicoNavigation.nomeMedico}</td>
-                                                <td>{consulta.idPacienteNavigation.nomePaciente}</td>
-                                                <td>{consulta.idMedicoNavigation.idEspecialidadeNavigation.nomeEspecialidade}</td>
-                                                <td>{consulta.idMedicoNavigation.idClinicaNavigation.enderecoClinica}</td>
+                                                <td>{consulta.idSituacaoNavigation[0].nomeSituacao}</td>
+                                                <td>{consulta.idMedicoNavigation[0].nomeMedico}</td>
+                                                <td>{consulta.idPacienteNavigation[0].nomePaciente}</td>
+                                                
+                                                
                                             </tr>
                                         )
                                     })
